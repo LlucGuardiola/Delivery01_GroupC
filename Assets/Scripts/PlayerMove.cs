@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        // commit test
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
