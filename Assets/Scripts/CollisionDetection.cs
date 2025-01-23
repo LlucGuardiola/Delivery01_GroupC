@@ -17,6 +17,7 @@ public class CollisionDetection : MonoBehaviour
     public Transform CurrentPlatform;
 
     private float _checkRadius = 0.15f;
+    private float _frontRadius = 0.30f;
     private bool _wasGrounded;
 
     [SerializeField]
@@ -47,7 +48,7 @@ public class CollisionDetection : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(GroundCheckPoint.position, _checkRadius);
-        Gizmos.DrawWireSphere(FrontCheckPoint.position, _checkRadius);
+        Gizmos.DrawWireSphere(FrontCheckPoint.position, _frontRadius);
         Gizmos.color = Color.white;
     }
 
@@ -70,7 +71,7 @@ public class CollisionDetection : MonoBehaviour
 
     private void CheckFront()
     {
-        var colliders = Physics2D.OverlapCircleAll(FrontCheckPoint.position, _checkRadius, WhatIsGround);
+        var colliders = Physics2D.OverlapCircleAll(FrontCheckPoint.position, _frontRadius, WhatIsGround);
 
         _isTouchingFront = (colliders.Length > 0);
     }

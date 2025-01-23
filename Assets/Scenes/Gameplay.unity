@@ -550,13 +550,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WhatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   WhatIsPlatform:
     serializedVersion: 2
     m_Bits: 0
-  GroundCheckPoint: {fileID: 0}
-  FrontCheckPoint: {fileID: 0}
-  RoofCheckPoint: {fileID: 0}
+  GroundCheckPoint: {fileID: 1918508236}
+  FrontCheckPoint: {fileID: 249184065}
+  RoofCheckPoint: {fileID: 254180828}
   CurrentPlatform: {fileID: 0}
   _isGrounded: 0
   _isTouchingFront: 0
@@ -576,10 +576,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2148743d744e1e41943fa275bfe4602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpHeight: 5
-  DistanceToMaxHeight: 1.5
-  SpeedHorizontal: 0
-  PressTimeToMaxJump: 0
+  JumpHeight: 4
+  FallSpeedMultiplier: 1.5
+  DistanceToMaxHeight: 2
+  SpeedHorizontal: 3.6
+  PressTimeToMaxJump: 0.5
   WallSlideSpeed: 1
   filter:
     useTriggers: 0
@@ -890,7 +891,7 @@ Transform:
   m_GameObject: {fileID: 249184064}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2262, y: -0.004, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

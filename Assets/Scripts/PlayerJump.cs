@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerJumper : MonoBehaviour
 {
     public float JumpHeight;
+    public float FallSpeedMultiplier;
     public float DistanceToMaxHeight;
     public float SpeedHorizontal;
     public float PressTimeToMaxJump;
@@ -82,7 +83,7 @@ public class PlayerJumper : MonoBehaviour
 
     private void TweakGravity()
     {
-        _rigidbody.gravityScale *= 1.2f;
+        _rigidbody.gravityScale *= FallSpeedMultiplier;
     }
 
     private float GetJumpForce()

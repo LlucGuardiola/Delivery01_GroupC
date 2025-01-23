@@ -11,8 +11,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        // commit test // comit test 2
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>(); 
     }
 
     void FixedUpdate()
@@ -31,4 +30,3 @@ public class PlayerMove : MonoBehaviour
         _horizontalDir = inputVal.x;
     }
 }
-//prova github commit
