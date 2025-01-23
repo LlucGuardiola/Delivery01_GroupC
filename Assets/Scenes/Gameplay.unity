@@ -576,10 +576,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2148743d744e1e41943fa275bfe4602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpHeight: 4
+  JumpHeight: 3
   FallSpeedMultiplier: 1.5
   DistanceToMaxHeight: 2
-  SpeedHorizontal: 3.6
+  SpeedHorizontal: 3
   PressTimeToMaxJump: 0.5
   WallSlideSpeed: 1
   filter:
@@ -596,6 +596,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  NumberOfJumps: 2
 --- !u!1 &227829529
 GameObject:
   m_ObjectHideFlags: 0

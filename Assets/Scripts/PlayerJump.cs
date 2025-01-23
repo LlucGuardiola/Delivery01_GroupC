@@ -12,13 +12,16 @@ public class PlayerJumper : MonoBehaviour
     public float PressTimeToMaxJump;
     public float WallSlideSpeed = 1;
     public ContactFilter2D filter;
+    public int NumberOfJumps;
 
+    private int currentJumps = 0;
     private Rigidbody2D _rigidbody;
     private CollisionDetection _collisionDetection;
     private float _lastVelocityY;
     private float _jumpStartedTime;
 
     bool IsWallSliding => _collisionDetection.IsTouchingFront;
+    bool IsTouchingGround => _collisionDetection.IsGrounded;
 
     void Start()
     {
@@ -31,15 +34,19 @@ public class PlayerJumper : MonoBehaviour
         if (IsPeakReached()) TweakGravity();
 
         if (IsWallSliding) SetWallSlide();
+
+        if (IsTouchingGround) currentJumps = 1; Debug.Log("ground");
     }
 
     // NOTE: InputSystem: "JumpStarted" action becomes "OnJumpStarted" method
     public void OnJumpStarted()
     {
+        if (NumberOfJumps <= currentJumps) return;
         SetGravity();
         var vel = new Vector2(_rigidbody.linearVelocity.x, GetJumpForce());
         _rigidbody.linearVelocity = vel;
         _jumpStartedTime = Time.time;
+        currentJumps += 1;
     }
 
     // NOTE: InputSystem: "JumpFinished" action becomes "OnJumpFinished" method
