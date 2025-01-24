@@ -35,7 +35,7 @@ public class PlayerJumper : MonoBehaviour
 
         if (IsWallSliding) SetWallSlide();
 
-        if (IsTouchingGround) currentJumps = 1; Debug.Log("ground");
+        if (IsTouchingGround) currentJumps = 1; 
     }
 
     // NOTE: InputSystem: "JumpStarted" action becomes "OnJumpStarted" method
