@@ -68,7 +68,7 @@ public class PlayerJumper : MonoBehaviour
     
     private bool IsPeakReached()
     {
-        bool reached = ((_lastVelocityY * _rigidbody.linearVelocity.y) < 0);
+        bool reached = (_lastVelocityY * _rigidbody.linearVelocity.y) < 0;
         _lastVelocityY = _rigidbody.linearVelocity.y;
 
         return reached;
