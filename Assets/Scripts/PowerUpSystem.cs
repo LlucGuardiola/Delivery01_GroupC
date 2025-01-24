@@ -5,31 +5,23 @@ using UnityEngine;
 
 public class PowerUpSystem : MonoBehaviour
 {
-    GameObject player = GameObject.Find("Player");
-
+    GameObject player;
+    private void Start()
+    {
+       player = GameObject.Find("Player");
+    }
     private void OnEnable()
     {
-        Debug.Log("skiper");
         PowerUp.OnPowerUpCollected += UpdateJump;
     }
 
     private void OnDisable()
     {
-        Debug.Log("skiper3");
         PowerUp.OnPowerUpCollected -= UpdateJump;
     }
     private void UpdateJump(PowerUp powerUp)
     {
-        Debug.Log("skiper2");
-        player.GetComponent<PlayerJumper>().SpeedHorizontal += 5;
-    }
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
+        // Jump PowerUp
+        player.GetComponent<PlayerJumper>().SpeedHorizontal += 10;
     }
 }

@@ -14,7 +14,6 @@ public class ScoreSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("hola");
         Coin.OnCoinCollected += UpdateScore;
     }
 
