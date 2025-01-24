@@ -1,5 +1,7 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class PowerUpSystem : MonoBehaviour
 {
@@ -19,6 +21,15 @@ public class PowerUpSystem : MonoBehaviour
     private void UpdateJump(PowerUp powerUp)
     {
         Debug.Log("skiper2");
-        player.GetComponent<PlayerJumper>().SpeedHorizontal += 2;
+        player.GetComponent<PlayerJumper>().SpeedHorizontal += 5;
+    }
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+
     }
 }
