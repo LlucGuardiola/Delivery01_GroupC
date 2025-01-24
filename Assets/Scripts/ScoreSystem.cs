@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreSystem : MonoBehaviour
 {
@@ -25,7 +26,10 @@ public class ScoreSystem : MonoBehaviour
     private void UpdateScore(Coin coin)
     {
         Score += coin.Value;
-
+        if(Score > 10)
+        {
+            SceneManager.LoadScene("Ending");
+        }
         OnScoreUpdated?.Invoke(Score);
     }
 
