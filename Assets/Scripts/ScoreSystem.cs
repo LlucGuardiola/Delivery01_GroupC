@@ -26,10 +26,6 @@ public class ScoreSystem : MonoBehaviour
     private void UpdateScore(Coin coin)
     {
         Score += coin.Value;
-        if(Score > 10)
-        {
-            SceneManager.LoadScene("Ending");
-        }
         OnScoreUpdated?.Invoke(Score);
     }
 
