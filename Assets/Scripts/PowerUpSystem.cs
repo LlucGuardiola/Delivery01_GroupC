@@ -22,6 +22,7 @@ public class PowerUpSystem : MonoBehaviour
     private void UpdateJump(PowerUp powerUp)
     {
         // Jump PowerUp
-        player.GetComponent<PlayerJumper>().SpeedHorizontal += 10;
+        player.GetComponent<PlayerJumper>().JumpHeight += 1;
+        player.GetComponent<PlayerJumper>().SpeedHorizontal -= 1;
     }
 }
