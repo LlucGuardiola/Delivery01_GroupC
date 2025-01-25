@@ -13,7 +13,6 @@ public class Coin : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //SendMessage("OnCoinCollected", this);
             OnCoinCollected?.Invoke(this);
             Destroy(gameObject);
         }

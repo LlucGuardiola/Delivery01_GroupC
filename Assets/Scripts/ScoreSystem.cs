@@ -28,14 +28,4 @@ public class ScoreSystem : MonoBehaviour
         Score += coin.Value;
         OnScoreUpdated?.Invoke(Score);
     }
-
-    void Start() 
-    { 
-    
-    }
-
-    void Update()
-    {
-        
-    }
 }

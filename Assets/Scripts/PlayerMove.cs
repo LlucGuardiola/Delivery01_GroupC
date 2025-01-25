@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private float Speed = 5.0f;
 
     Rigidbody2D _rigidbody;
-    private float _horizontalDir; // Horizontal move direction value [-1, 1]
+    private float _horizontalDir;
 
     void Start()
     {
