@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: fac48cd2958469141b37ff9c92d2b622
+guid: 4e153d1cf71d8904782a47bc96503a72
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2268674869191614166
-    second: Jump-End-Sheet_0
+      213: 1532421853275604085
+    second: Jump-Start-Sheet_0
   - first:
-      213: 7223305902920631688
-    second: Jump-End-Sheet_1
+      213: 931923706832798508
+    second: Jump-Start-Sheet_1
   - first:
-      213: 4062616787491900451
-    second: Jump-End-Sheet_2
+      213: -8712674146861986598
+    second: Jump-Start-Sheet_2
+  - first:
+      213: 8670543832432759665
+    second: Jump-Start-Sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,35 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jump-End-Sheet_0
+      name: Jump-Start-Sheet_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 27
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a216af6f93c0480e0800000000000000
-      internalID: -2268674869191614166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-End-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 75
+        x: 11
         y: 0
         width: 37
-        height: 42
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,17 +124,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 885019fa2765e3460800000000000000
-      internalID: 7223305902920631688
+      spriteID: 574c9827e81444510800000000000000
+      internalID: 1532421853275604085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump-End-Sheet_2
+      name: Jump-Start-Sheet_1
       rect:
         serializedVersion: 2
-        x: 139
+        x: 74
         y: 0
         width: 37
         height: 41
@@ -165,8 +146,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32c4efc8170516830800000000000000
-      internalID: 4062616787491900451
+      spriteID: c23c88f7cabdeec00800000000000000
+      internalID: 931923706832798508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump-Start-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 25
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adccf80760d561780800000000000000
+      internalID: -8712674146861986598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump-Start-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1
+        width: 35
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173db955da5f35870800000000000000
+      internalID: 8670543832432759665
       vertices: []
       indices: 
       edges: []
@@ -184,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Jump-Start-Sheet_0: 1532421853275604085
+      Jump-Start-Sheet_1: 931923706832798508
+      Jump-Start-Sheet_2: -8712674146861986598
+      Jump-Start-Sheet_3: 8670543832432759665
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
