@@ -29,4 +29,23 @@ public class PlayerMove : MonoBehaviour
         var inputVal = value.Get<Vector2>();
         _horizontalDir = inputVal.x;
     }
+    private void Update()
+    {
+        if(_horizontalDir != 0)
+        {
+            GetComponent<Animator>().SetBool("canRun?",true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("canRun?", false);
+        }
+        if (_horizontalDir < 0)
+        { 
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        if (_horizontalDir > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
 }

@@ -37,11 +37,17 @@ public class PlayerJumper : MonoBehaviour
 
         if (IsTouchingGround) currentJumps = 1; 
     }
+    private void Update()
+    {
+        GetComponent<Animator>().SetBool("isOnAir?", !IsTouchingGround);
+    }
 
     // NOTE: InputSystem: "JumpStarted" action becomes "OnJumpStarted" method
     public void OnJumpStarted()
     {
         if (NumberOfJumps <= currentJumps) return;
+
+        GetComponent<Animator>().SetTrigger("startJump");
         SetGravity();
         var vel = new Vector2(_rigidbody.linearVelocity.x, GetJumpForce());
         _rigidbody.linearVelocity = vel;
