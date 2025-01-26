@@ -99,7 +99,7 @@ public class PlayerJumper : MonoBehaviour
     {
         _rigidbody.gravityScale *= FallSpeedMultiplier;
         _rigidbody.gravityScale = Mathf.Clamp(_rigidbody.gravityScale, -Mathf.Infinity, MaxFallSpeed); 
-        // Posem límit, ja que a vegades la escala de velocitat arriba a valors massa alts.
+        // Max value established to avoid getting the gravity scale to enormous values.
     }
 
     private float GetJumpForce()
