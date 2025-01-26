@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float Speed = 5.0f;
 
-    public Vector3 spawnpoint { get; private set; }
+    public Vector3 spawnpoint;
 
     Rigidbody2D _rigidbody;
     private float _horizontalDir;
