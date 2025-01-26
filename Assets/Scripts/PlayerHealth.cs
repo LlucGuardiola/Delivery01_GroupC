@@ -29,6 +29,8 @@ public class PlayerHealth : MonoBehaviour
             {
                 SceneManager.LoadScene("Ending");
             }
+            GetComponent<Animator>().SetTrigger("takeDamage");
+            GetComponent<Transform>().position = GetComponent<PlayerMove>().spawnpoint;
         }
     }
 }

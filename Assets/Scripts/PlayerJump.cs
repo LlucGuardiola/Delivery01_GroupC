@@ -11,8 +11,9 @@ public class PlayerJumper : MonoBehaviour
     public float SpeedHorizontal;
     public float PressTimeToMaxJump;
     public float WallSlideSpeed = 1;
-    public ContactFilter2D filter;
+    public float MaxFallSpeed;
     public int NumberOfJumps;
+    public ContactFilter2D filter;
 
     private int currentJumps = 0;
     private Rigidbody2D _rigidbody;
@@ -97,6 +98,8 @@ public class PlayerJumper : MonoBehaviour
     private void TweakGravity()
     {
         _rigidbody.gravityScale *= FallSpeedMultiplier;
+        _rigidbody.gravityScale = Mathf.Clamp(_rigidbody.gravityScale, -Mathf.Infinity, MaxFallSpeed); 
+        // Posem límit, ja que a vegades la escala de velocitat arriba a valors massa alts.
     }
 
     private float GetJumpForce()

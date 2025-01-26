@@ -6,12 +6,15 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float Speed = 5.0f;
 
+    public Vector3 spawnpoint { get; private set; }
+
     Rigidbody2D _rigidbody;
     private float _horizontalDir;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>(); 
+        spawnpoint = GetComponent<Transform>().position;
     }
 
     void FixedUpdate()
@@ -31,21 +34,10 @@ public class PlayerMove : MonoBehaviour
     }
     private void Update()
     {
-        if(_horizontalDir != 0)
-        {
-            GetComponent<Animator>().SetBool("canRun?",true);
-        }
-        else
-        {
-            GetComponent<Animator>().SetBool("canRun?", false);
-        }
-        if (_horizontalDir < 0)
-        { 
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (_horizontalDir > 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
+        if(_horizontalDir != 0) { GetComponent<Animator>().SetBool("canRun?",true);}
+        else { GetComponent<Animator>().SetBool("canRun?", false);}
+
+        if (_horizontalDir < 0) { GetComponent<SpriteRenderer>().flipX = true;}
+        if (_horizontalDir > 0) { GetComponent<SpriteRenderer>().flipX = false;}
     }
 }
