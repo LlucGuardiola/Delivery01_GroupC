@@ -21,6 +21,9 @@ public class PlayerJumper : MonoBehaviour
     private float _lastVelocityY;
     private float _jumpStartedTime;
 
+    public AudioClip JumpSound; 
+    private AudioSource audioSource;
+
     bool IsWallSliding => _collisionDetection.IsTouchingFront;
     bool IsTouchingGround => _collisionDetection.IsGrounded;
 
@@ -28,6 +31,8 @@ public class PlayerJumper : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _collisionDetection = GetComponent<CollisionDetection>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     void FixedUpdate()
@@ -54,6 +59,10 @@ public class PlayerJumper : MonoBehaviour
         _rigidbody.linearVelocity = vel;
         _jumpStartedTime = Time.time;
         currentJumps += 1;
+        if (audioSource != null && JumpSound != null)
+        {
+            audioSource.PlayOneShot(JumpSound);
+        }
     }
 
     // NOTE: InputSystem: "JumpFinished" action becomes "OnJumpFinished" method
