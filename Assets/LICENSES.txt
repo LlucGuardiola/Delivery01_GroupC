@@ -77,7 +77,6 @@ Patreon: https://www.patreon.com/Anokolisa
 Twitter: https://twitter.com/Anokolisa
 
 Audio Licenses:
-https://pixabay.com/es/service/license-summary/
 
 Content License Summary
 Welcome to Pixabay! Pixabay is a vibrant community of authors, artists and creators sharing royalty-free images, video, audio and other media. We refer to this collectively as "Content". By accessing and using Content, or by contributing Content, you agree to comply with our Content License.
@@ -98,3 +97,5 @@ We refer to these as Prohibited Uses which include:
 ✕	You cannot use Content in any immoral or illegal way, especially Content which features recognisable people.
 ✕	You cannot use Content in a misleading or deceptive way.
 ✕	You cannot use any of the Content as part of a trade-mark, design-mark, trade-name, business name or service mark.
+
+https://pixabay.com/es/service/license-summary/
