@@ -6,10 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class ScoreSystem : MonoBehaviour
 {
+    public static ScoreSystem Instance;
+    public static Action<int> OnScoreUpdated;
     public int Score;
 
-    public static Action<int> OnScoreUpdated;
-
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void OnEnable()
     {
         Coin.OnCoinCollected += UpdateScore;
