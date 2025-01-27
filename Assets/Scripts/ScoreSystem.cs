@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ScoreSystem : MonoBehaviour
 {
+    public int Score;
+
     public static ScoreSystem Instance;
     public static Action<int> OnScoreUpdated;
-    public int Score;
     public AudioClip CoinSound;
     private AudioSource audioSource;
-
 
     private void Awake()
     {
@@ -25,10 +25,12 @@ public class ScoreSystem : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     private void OnEnable()
     {
         Coin.OnCoinCollected += UpdateScore;

@@ -9,11 +9,13 @@ public class PowerUpSystem : MonoBehaviour
     GameObject player;
     public AudioClip PowerUpSound;
     private AudioSource audioSource;
+
     private void Start()
     {
        player = GameObject.Find("Player");
        audioSource = GetComponent<AudioSource>();
     }
+
     private void OnEnable()
     {
         PowerUp.OnPowerUpCollected += UpdateJump;
@@ -23,6 +25,7 @@ public class PowerUpSystem : MonoBehaviour
     {
         PowerUp.OnPowerUpCollected -= UpdateJump;
     }
+
     private void UpdateJump(PowerUp powerUp)
     {
         if (audioSource != null && PowerUpSound != null)

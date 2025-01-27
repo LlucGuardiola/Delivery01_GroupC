@@ -13,6 +13,7 @@ public class ScoreText : MonoBehaviour
     {
         _label = GetComponent<Text>();
     }
+
     private void OnEnable()
     {
         ScoreSystem.OnScoreUpdated += UpdateScoreText;
@@ -22,6 +23,7 @@ public class ScoreText : MonoBehaviour
     {
         ScoreSystem.OnScoreUpdated -= UpdateScoreText;
     }
+
     private void UpdateScoreText(int score)
     {
         _label.text = "SCORE: " + score.ToString();

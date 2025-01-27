@@ -14,15 +14,15 @@ public class PlayerJumper : MonoBehaviour
     public float MaxFallSpeed;
     public int NumberOfJumps;
     public ContactFilter2D filter;
+    public AudioClip JumpSound; 
 
+    private float _lastVelocityY;
+    private float _jumpStartedTime;
     private int currentJumps = 0;
     private Rigidbody2D _rigidbody;
     private CollisionDetection _collisionDetection;
-    private float _lastVelocityY;
-    private float _jumpStartedTime;
-
-    public AudioClip JumpSound; 
     private AudioSource audioSource;
+
 
     bool IsWallSliding => _collisionDetection.IsTouchingFront;
     bool IsTouchingGround => _collisionDetection.IsGrounded;
@@ -32,7 +32,6 @@ public class PlayerJumper : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _collisionDetection = GetComponent<CollisionDetection>();
         audioSource = GetComponent<AudioSource>();
-
     }
 
     void FixedUpdate()
@@ -43,12 +42,12 @@ public class PlayerJumper : MonoBehaviour
 
         if (IsTouchingGround) currentJumps = 1; 
     }
+
     private void Update()
     {
         GetComponent<Animator>().SetBool("isOnAir?", !IsTouchingGround);
     }
 
-    // NOTE: InputSystem: "JumpStarted" action becomes "OnJumpStarted" method
     public void OnJumpStarted()
     {
         if (NumberOfJumps <= currentJumps) return;
@@ -65,7 +64,6 @@ public class PlayerJumper : MonoBehaviour
         }
     }
 
-    // NOTE: InputSystem: "JumpFinished" action becomes "OnJumpFinished" method
     public void OnJumpFinished()
     {
         float fractionOfTimePressed = 1 / Mathf.Clamp01((Time.time - _jumpStartedTime) / PressTimeToMaxJump);
@@ -92,8 +90,6 @@ public class PlayerJumper : MonoBehaviour
 
     private void SetWallSlide()
     {
-        // Modify player linear velocity on wall sliding
-        //_rigidbody.gravityScale = 0.8f;
         _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, 
             Mathf.Max(_rigidbody.linearVelocity.y, -WallSlideSpeed));
     }
@@ -108,7 +104,6 @@ public class PlayerJumper : MonoBehaviour
     {
         _rigidbody.gravityScale *= FallSpeedMultiplier;
         _rigidbody.gravityScale = Mathf.Clamp(_rigidbody.gravityScale, -Mathf.Infinity, MaxFallSpeed); 
-        // Max value established to avoid getting the gravity scale to enormous values.
     }
 
     private float GetJumpForce()
