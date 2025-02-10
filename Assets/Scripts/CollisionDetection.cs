@@ -11,14 +11,11 @@ public class CollisionDetection : MonoBehaviour
     private Transform GroundCheckPoint;
     [SerializeField]
     private Transform FrontCheckPoint;
-    [SerializeField]
-    private Transform RoofCheckPoint;
 
     public Transform CurrentPlatform;
 
     private float _checkRadius = 0.15f;
     private float _frontRadius = 0.35f;
-    private bool _wasGrounded;
 
     [SerializeField]
     private bool _isGrounded;
@@ -31,10 +28,6 @@ public class CollisionDetection : MonoBehaviour
     [SerializeField]
     private bool _isPlatformGround;
     public bool IsPlatForm { get { return _isPlatformGround; } }
-
-    [SerializeField]
-    private bool _isTouchingRoof;
-    public bool IsTouchingRoof { get { return _isTouchingRoof; } }
 
     [SerializeField]
     private float _distanceToGround;
@@ -54,9 +47,6 @@ public class CollisionDetection : MonoBehaviour
 
     void FixedUpdate()
     {
-        // NOTE: Physics are recommended to be updated at fixed time steps
-        // so logic is added to FixedUpdate() method
-
         CheckCollisions();
         CheckDistanceToGround();
     }
@@ -66,7 +56,6 @@ public class CollisionDetection : MonoBehaviour
         CheckGrounded();
         CheckPlatformed();
         CheckFront();
-        //CheckRoof();          // Enable check once a RoofCheckPoint has been set!
     }
 
     private void CheckFront()
@@ -76,21 +65,11 @@ public class CollisionDetection : MonoBehaviour
         _isTouchingFront = (colliders.Length > 0);
     }
 
-    private void CheckRoof()
-    {
-        var colliders = Physics2D.OverlapCircleAll(RoofCheckPoint.position, _checkRadius, WhatIsGround);
-
-        _isTouchingRoof = (colliders.Length > 0);
-    }
-
     private void CheckGrounded()
     {
         var colliders = Physics2D.OverlapCircleAll(GroundCheckPoint.position, _checkRadius, WhatIsGround);
 
-        _isGrounded =  (colliders.Length > 0);
-
-        //if (!_wasGrounded && _isGrounded) SendMessage("OnLanding");
-        //_wasGrounded = _isGrounded;
+        _isGrounded =  colliders.Length > 0;
     }
 
     private void CheckPlatformed()
@@ -99,9 +78,6 @@ public class CollisionDetection : MonoBehaviour
 
         _isPlatformGround = (colliders.Length > 0);
         if (_isPlatformGround) CurrentPlatform = colliders[0].transform;
-
-        //if (!_wasGrounded && _isGrounded) SendMessage("OnLanding");
-        //_wasGrounded = _isGrounded;
     }
 
     private void CheckDistanceToGround()

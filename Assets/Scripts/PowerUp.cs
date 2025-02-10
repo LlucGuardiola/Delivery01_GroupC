@@ -9,7 +9,6 @@ public class PowerUp : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            // SendMessage("OnPowerUpCollected", this);
             OnPowerUpCollected?.Invoke(this);
             Destroy(gameObject);
         }
